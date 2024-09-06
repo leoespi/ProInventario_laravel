@@ -13,15 +13,11 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        return response(['products' => $products 
+    ], 200,[],JSON_NUMERIC_CHECK);
+      
     }
 
-
-    // Muestra el formulario para crear un nuevo producto
-    public function create()
-    {
-        return view('products.create');
-    }
 
 
 
