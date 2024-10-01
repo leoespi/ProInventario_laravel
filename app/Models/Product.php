@@ -19,4 +19,11 @@ class Product extends Model
 
     // Opcional: si quieres deshabilitar las marcas de tiempo (created_at y updated_at)
     // public $timestamps = false;
+
+    public function ventas()
+    {
+        return $this->belongsToMany(Venta::class, 'venta_producto')
+                    ->withPivot('cantidad')
+                    ->withTimestamps();
+    }
 }
