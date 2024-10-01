@@ -24,7 +24,8 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->mid
 Route::resource('products', ProductController::class)->middleware('auth:sanctum');
 
 Route::post('/ventas', [VentaController::class, 'store'])->middleware('auth:sanctum');   // Crear una nueva venta
-
+Route::get('/ventas', [VentaController::class, 'index'])->middleware('auth:sanctum'); //listar ventas
+ 
 Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);
 

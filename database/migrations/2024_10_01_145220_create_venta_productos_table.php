@@ -18,6 +18,8 @@ class CreateVentaProductosTable extends Migration
             $table->foreignId('venta_id')->constrained('ventas')->onDelete('cascade');
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->integer('cantidad');
+            $table->string('nombre'); // Nombre del cliente
+            $table->string('telefono'); // Teléfono del cliente
             $table->timestamps();
         });
         
