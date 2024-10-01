@@ -16,7 +16,7 @@ use App\Http\Controllers\Api\ProductController;
 |
 */
 
-Route::resource('products', ProductController::class);
+Route::resource('products', ProductController::class)->middleware('auth:sanctum');
 
 
 Route::post('register', [AuthenticationController::class, 'register']);
